@@ -14,9 +14,11 @@
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto&display=swap" rel="stylesheet">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css-reset.css">
+  <!--<link rel="stylesheet" href="#">-->
   <link rel="stylesheet" href="stylesheet.css">
 
   <meta name="theme-color" content="#ffffff">
@@ -29,26 +31,75 @@
         </div>
         <div class="header">
             <h1>Hello World!</h1>
-            <h2>Today's date</h2>
+            <h2 id="date"></h2>
         </div>
         <div class="toggle-view">
             <p>Your news | Default</p>
         </div>
-        <div id="waterfall-container">
-            <h4>Waterfall A</h4>
-            <h4>Waterfall B</h4>
-            <h4>Waterfall C</h4>
-            <h4>Waterfall D</h4>
+        <div class="waterfall-container">
+            <ul>
+                <li id="wf-item" onclick="wfToggle('item1')">
+                    <a href="" style="">Waterfall A</a>
+                </li>
+                <div class="wfItem" id="item1">
+                    <p>Show/hide</p>
+                </div>
+                <li id="wf-item" onclick="wfToggle('item2')">
+                    <a href="" style="">Waterfall B</a>
+                </li>
+                <div class="wfItem" id="item2">
+                    <p>Show/hide</p>
+                </div>
+                <li id="wf-item" onclick="wfToggle('item3')">
+                    <a href="" style="">Waterfall C</a>
+                </li>
+                <div class="wfItem" id="item2">
+                    <p>Show/hide</p>
+                </div>
+                <li id="wf-item" onclick="wfToggle('item4')">
+                    <a href="" style="">Waterfall D</a>
+                </li>
+                <div class="wfItem" id="item2">
+                    <p>Show/hide</p>
+                </div>
+            </ul>
+            
         </div>
     </div>
+
     
+<!-- Get Date --> 
+<script>
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    n =  new Date();
+    y = n.getFullYear();
+    m = n.getMonth();
+    d = n.getDate();
+    day = n.getDay();
+    document.getElementById("date").innerHTML = days[day] + "," + " " + months[m] + " " + d + "," + " " + y;
+</script>
+
+<!-- Show/Hide Waterfall-->
+<script>
+    function wfToggle(itemId) {
+        var x = document.getElementById(itemId);  
+        if (x.style.display == "none") 
+            {
+                x.style.display = "block";
+            } 
+        else {
+            x.style.display = "none";
+        }  
+    }
+</script>
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
 
 </body>
 </html>

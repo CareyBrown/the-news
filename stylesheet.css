@@ -1,0 +1,55 @@
+body{
+    font-family: 'Playfair Display', Times, serif;
+}
+
+ul{
+    
+}
+
+li{
+    
+}
+
+.main{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.headline{
+    text-align: right;
+}
+
+.header{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.toggle-view{
+    text-align: right;
+}
+
+.waterfall-container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+p{
+
+}
+
+h1{
+    font-family: 'Grenze Gotisch', cursive;
+    font-size: 48px;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+.wfItem{
+    
